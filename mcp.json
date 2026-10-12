@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "discord": {
+      "command": "node",
+      "args": ["${CURSOR_PLUGIN_ROOT}/packages/mcp-server/dist/index.js"],
+      "env": {
+        "DISCORD_TOKEN": "${DISCORD_TOKEN}",
+        "DISCORD_DM_TOKEN": "${DISCORD_DM_TOKEN}"
+      }
+    }
+  }
+}

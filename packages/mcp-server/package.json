@@ -1,0 +1,35 @@
+{
+  "name": "discord-mcp-cursor",
+  "version": "1.0.0",
+  "description": "Discord MCP server for Cursor (REST + discord.js builders, no Gateway)",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "discord-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --format=esm --target=node20 --outfile=dist/index.js --banner:js='import {createRequire} from \"module\"; const require = createRequire(import.meta.url);' && node -e 'const fs=require(\"fs\");let c=fs.readFileSync(\"dist/index.js\",\"utf8\");c=c.replace(/^#[^\\n]*\\n?/g,\"\");c=\"#!/usr/bin/env node\\n\"+c;fs.writeFileSync(\"dist/index.js\",c);fs.chmodSync(\"dist/index.js\",0o755);console.log(\"bundled with shebang+require\");'",
+    "typecheck": "tsc --noEmit",
+    "start": "node dist/index.js",
+    "test": "node test/smoke.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "files": ["dist"],
+  "repository": "https://github.com/ozekimasaki/discord-mcp",
+  "dependencies": {
+    "@discordjs/builders": "^1.13.0",
+    "@discordjs/formatters": "^0.6.2",
+    "@discordjs/rest": "^2.6.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "discord-api-types": "^0.38.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.17.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.9.0"
+  }
+}

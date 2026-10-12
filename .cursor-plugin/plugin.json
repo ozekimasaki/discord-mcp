@@ -1,0 +1,28 @@
+{
+  "name": "discord-mcp",
+  "version": "0.1.0",
+  "description": "Discord MCP for Cursor. Send/reply/edit messages, manage channels/roles/webhooks/commands, read guilds. Supports DMs.",
+  "author": {
+    "name": "Masaki Ozeki"
+  },
+  "license": "MIT",
+  "keywords": ["discord", "mcp", "discord.js"],
+  "logo": "assets/logo.svg",
+  "repository": "https://github.com/ozekimasaki/discord-mcp",
+  "variables": {
+    "type": "object",
+    "properties": {
+      "DISCORD_TOKEN": {
+        "type": "string",
+        "title": "Discord Bot Token",
+        "description": "Bot token from Discord Developer Portal (Bot tab). Required for MCP server."
+      },
+      "DISCORD_DM_TOKEN": {
+        "type": "string",
+        "title": "Discord DM Token (optional)",
+        "description": "Optional separate token for DM tools. Falls back to DISCORD_TOKEN if unset."
+      }
+    },
+    "required": ["DISCORD_TOKEN"]
+  }
+}

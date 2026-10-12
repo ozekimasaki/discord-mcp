@@ -1,0 +1,11 @@
+---
+description: Token and secret safety rules for Discord MCP. Always enforce entry via plugin settings.
+alwaysApply: true
+---
+
+# Token safety
+
+- Never ask users to paste tokens, secrets, or credentials into chat or any prompt.
+- Tokens MUST be entered only via the Cursor plugin variables (Plugins -> Configure) secret fields or environment variables (DISCORD_TOKEN, DISCORD_DM_TOKEN).
+- Never echo, log, or return tokens in any tool output, error, or response.
+- If a token error occurs, instruct user to configure via plugin UI or set env var; do not suggest pasting.

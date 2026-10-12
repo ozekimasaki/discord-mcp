@@ -1,0 +1,11 @@
+---
+description: Discord post and destructive-action rules. Keep tokens secret.
+alwaysApply: true
+---
+
+# Discord safety
+
+- For message posting tools, follow your configured approval rules for new content vs. replies. Destructive actions (delete, edit_guild, etc.) default to dry_run.
+- Destructive tools default to dry_run. Apply only with dry_run:false after approvals.
+- Never log DISCORD_TOKEN or webhook tokens.
+- See rules/token-safety.mdc for entry and echo rules.
